@@ -30,5 +30,10 @@
         "ext-sockets": "*",
         "ext-xmlwriter": "*",
         "ext-yaml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zce71\\": "tests"
+        }
     }
 }

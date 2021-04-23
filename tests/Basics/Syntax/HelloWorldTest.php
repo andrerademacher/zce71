@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Basics\Syntax;
+namespace Zce71\Basics\Syntax;
 
 use PHPUnit\Framework\TestCase;
 
