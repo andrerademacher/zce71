@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/bin/php7.1 ./vendor/bin/phpunit $@
+/usr/bin/php7.1 ./vendor/bin/phpunit "$@"
