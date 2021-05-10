@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zce71\Arrays\Operator;
+namespace Zce71\Arrays\Operators;
 
 use Generator;
 use PHPUnit\Framework\TestCase;
@@ -52,7 +52,9 @@ class EqualityTest extends TestCase
         ];
 
         yield 'arrays with same key-value pairs, but with different order, are equal (but not identical)' => [
-            true, [0 => 'a', 1 => 'b', 2 => 'c',], [1 => 'b', 2 => 'c', 0 => 'a',]
+            true,
+            [0 => 'a', 1 => 'b', 2 => 'c',],
+            [1 => 'b', 2 => 'c', 0 => 'a',]
         ];
 
         yield 'empty array and array containing the value null are not equal' => [

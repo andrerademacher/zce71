@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zce71\Arrays\Operator;
+namespace Zce71\Arrays\Operators;
 
 use Generator;
 use PHPUnit\Framework\TestCase;
