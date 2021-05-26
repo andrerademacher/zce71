@@ -35,6 +35,25 @@ class HelloWorldTest extends TestCase
     }
 
     /**
+     * echo allows a native multiline approach.
+     * @return void
+     */
+    public function testWithEchoMultiLine(): void
+    {
+        ob_start();
+        echo
+'hello world
+in a multiline
+statement!';
+        $output = ob_get_clean();
+        $expected = 'hello world' . PHP_EOL
+            . 'in a multiline' . PHP_EOL
+            . 'statement!';
+
+        self::assertSame($expected, $output);
+    }
+
+    /**
      * print_r returns the value of a string, int or float directly, in case the second parameter "return" is true.
      * @return void
      */

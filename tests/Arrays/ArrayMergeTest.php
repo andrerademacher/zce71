@@ -70,6 +70,12 @@ class ArrayMergeTest extends TestCase
             ['a' => 1, 'b' => 2, 3],
             [4, 'b' => 5, 1 => 6]
         ];
+
+        yield 'merging arrays with duplicate string keys that can be cast to int behave like numeric keys, these are ignored and their values appended using a default numeric key' => [
+            [0 => 1, 'c' => 2, 1 => 3, 2 => 4, 3 => 5, 4 => 6],
+            ['1' => 1, 'c' => 2, '3' => 3],
+            ['1' => 4, 2 => 5, '3' => 6]
+        ];
     }
 
     /**
