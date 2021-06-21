@@ -43,8 +43,8 @@ class ArrayUniqueTest extends TestCase
          * Then mon-unique values (and their keys) are removed from the $input array.
          */
         yield 'numbers' => [
-            ['b' => 1, 0 => 1.1, 2 => 2, 5 => 4, 7 => '4.0'],
-            ['b' => 1, 1.1, '1', 2, 2, '2', 4, '4', '4.0'],
+            ['b' => 1, 0 => 1.1, 2 => 2, 5 => 4],
+            ['b' => 1, 1.1, '1', 2, 2, '2', 4, '4', 4.0],   // (string)4.0 === (string)4, (string)1 !== (string)1.1
             //keys  b, 0,    1,  2, 3,  4,  5,  6,   7
         ];
     }
