@@ -8,12 +8,9 @@ use PDO;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @TODO Describe PdoConstruct
- *
- * @author          CHECK24 REDA <it.reise.direktanbindung@check24.de>
- * @copyright       2021 CHECK24 Vergleichsportal Reise GmbH
+ * Tests creating a PDO with a valid dsn.
  */
-class PdoConstruct extends TestCase
+class PdoConstructTest extends TestCase
 {
     /**
      * Tests accessing the local database with credentials from config file
@@ -21,7 +18,7 @@ class PdoConstruct extends TestCase
      */
     public function testPdoConstruct(): void
     {
-        $pdoConfig = require __DIR__ . '/db.local.config.php';
+        $pdoConfig = require __DIR__ . '/db.config.local.php';
         $pdo = new PDO($pdoConfig['dsn'], $pdoConfig['username'], $pdoConfig['password'], $pdoConfig['options']);
         self::assertInstanceOf(PDO::class, $pdo);
     }
