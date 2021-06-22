@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests edge cases for array "uniqueness".
+ * @see https://www.php.net/manual/de/function.array-unique.php
  */
 class ArrayUniqueTest extends TestCase
 {
