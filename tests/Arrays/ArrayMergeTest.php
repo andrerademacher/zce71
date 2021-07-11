@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
  * Tests the array_merge() method's edge cases.
  * Merging arrays without string keys will ignore the keys and return an array containing all the values in the given order with default numeric keys starting at 0.
  * String keys, that can be converted into an (integer) numeric key, will be ignored and replaced with default numeric keys.
+ * @see https://www.php.net/manual/en/function.array-merge.php
  */
 class ArrayMergeTest extends TestCase
 {
