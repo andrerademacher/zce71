@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests the edge cases of array creation.
+ * @see https://www.php.net/manual/en/language.types.array.php
  */
 class ArrayCreationTest extends TestCase
 {

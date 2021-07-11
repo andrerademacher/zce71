@@ -10,17 +10,19 @@ use PHPUnit\Framework\TestCase;
 /**
  * Tests edge cases for array "uniqueness".
  * @see https://www.php.net/manual/en/function.array-unique.php
+ *
+ * The kind of uniqueness is defined by $sortFlags:
+ *
+ * SORT_STRING (default): $input[0] is unique if (string)$input[0] is unique (string cast must not be identical)
+ * SORT_REGULAR: $input[0] is unique if $input[0] is unique (value must not be identical)
+ * SORT_NUMERIC: $input[0] is unique if $input[0] is unique (numeric value must not be identical)
+ * SORT_LOCALE_STRING: $input[0] is unique if (string)$input[0] is unique based on current locale (string cast must not be identical)
+ *
  */
 class ArrayUniqueTest extends TestCase
 {
     /**
      * Tests various ways of making an array's values "unique".
-     * The kind of uniqueness is defined by $sortFlags:
-     *
-     * SORT_STRING (default): $input[0] is unique if (string)$input[0] is unique (string cast must not be identical)
-     * SORT_REGULAR: $input[0] is unique if $input[0] is unique (value must not be identical)
-     * SORT_NUMERIC: $input[0] is unique if $input[0] is unique (numeric value must not be identical)
-     * SORT_LOCALE_STRING: $input[0] is unique if (string)$input[0] is unique based on current locale (string cast must not be identical)
      *
      * @dataProvider provideUnique
      */
