@@ -14,9 +14,6 @@ use PHPUnit\Framework\TestCase;
  * array_pad() returns a copy of the array padded with the mixed value $value to the size $length.
  * If $length is positive, padding happens from the right, else from the left.
  * No padding takes place if the absolute value of $length is less or equal the current number of array items.
- *
- * @author          CHECK24 REDA <it.reise.direktanbindung@check24.de>
- * @copyright       2021 CHECK24 Vergleichsportal Reise GmbH
  */
 class ArrayPadTest extends TestCase
 {
