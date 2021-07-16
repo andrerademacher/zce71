@@ -92,9 +92,17 @@ class ArrayMergeTest extends TestCase
 
     public function provideArrayMergeWithDynamicNumberOfArrays(): Generator
     {
+        /**
+         * array merge rules are applied, so numeric keys are thrown away
+         */
         yield 'merging a single array' => [
             [0 => 'a', 'a' => 2, 1 => 1],
             [1 => 'a', 'a' => 2, '4' => 1]
+        ];
+
+        yield 'combined with array union operator' => [
+            [0 => 1, 1 => 2, 2 => 3],
+            [1, 2, 3] + [4, 5, 6],
         ];
     }
 }

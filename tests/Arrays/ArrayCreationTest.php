@@ -58,6 +58,16 @@ class ArrayCreationTest extends TestCase
             [1 => 1, 4 => 2, 1 => 3, '4' => 4]
         ];
 
+        yield 'float keys are int cast to numeric keys' => [
+            [-1 => 1, 0 => 0, 1 => 1, 2 => 2],
+            [-1.2 => 1, -0.4 => 0, 1.0 => 1, 2.75 => 2]
+        ];
+
+        yield 'float keys are overwriting previous values when int cast to numeric keys' => [
+            [0 => 2, 1 => 4, 2 => 5],
+            [0 => 0, 0.4 => 1, 0.8 => 2, 1.2 => 3, 1.6 => 4, 2.0 => 5]
+        ];
+
         yield 'mixed numeric and string keys' => [
            [0 => 0, 2 => 1, 'a' => 2, '1' => 3, 3 => 4],
            [0, 2 => 1, 'a' => 2, 1 => 3, 4]
