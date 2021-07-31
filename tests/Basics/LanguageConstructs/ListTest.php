@@ -122,4 +122,35 @@ class ListTest extends TestCase
             ['a' => 'a', 'A' => 'A', '0' => '0', 1 => 1, 2 => 2]
         ];
     }
+
+    /**
+     * With no keys given, list() starts at 0 and iterates.
+     * With given keys, list accesses the input array at these keys in exactly that order.
+     * @dataProvider provideListKeyOrder
+     */
+    public function testListKeyOrder($keyA, $expectedA, $keyB, $expectedB, $keyC, $expectedC, array $input): void
+    {
+        list($keyA => $valueA, $keyB => $valueB, $keyC => $valueC) = $input;
+
+        self::assertSame($expectedA, $valueA);
+        self::assertSame($expectedB, $valueB);
+        self::assertSame($expectedC, $valueC);
+    }
+
+    public function provideListKeyOrder(): Generator
+    {
+        yield 'with string keys' => [
+            'b', 'B',
+            'a', 'A',
+            'c', 'C',
+            ['a' => 'A', 'b' => 'B', 'c' => 'C']
+        ];
+
+        yield 'with mixed keys' => [
+            'fish', 'Fish',
+            'a', 'A',
+            '1',  1,
+            ['fish' => 'Fish', 1 => 1, 'a' => 'A']
+        ];
+    }
 }
