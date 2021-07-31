@@ -148,9 +148,9 @@ class ListTest extends TestCase
 
         yield 'with mixed keys' => [
             'fish', 'Fish',
+            1,  1,
             'a', 'A',
-            '1',  1,
-            ['fish' => 'Fish', 1 => 1, 'a' => 'A']
+            [1 => 1, 'a' => 'A', 'fish' => 'Fish']
         ];
     }
 }
