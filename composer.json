@@ -31,9 +31,9 @@
         "ext-xmlwriter": "*",
         "ext-yaml": "*"
     },
-    "autoload": {
+    "autoload-dev": {
         "psr-4": {
-            "Zce71\\": "tests"
+            "Zce71\\": "tests/"
         }
     }
 }
